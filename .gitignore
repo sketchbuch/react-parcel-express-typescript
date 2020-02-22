@@ -1,25 +1,25 @@
 # Folders
+.cache
+.DS_Store
+.vscode
 /audit
 /build
 /coverage
 /node_modules
+/dist
 /public
 
-# Misc
-.DS_Store
-.env.development.local
-.env.local
-.env.production.local
-.env.test.local
-.env
-.vscode
-
-# Logs
+# Log Files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Files
+# Misc. Files
+.env
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
 *.code-workspace
-stats.*.json
 audit-report.html
+stats.*.json

@@ -1,23 +1,33 @@
 import React, { useEffect } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import { APP_LOADED } from '../../constants/actions';
 import { ErrorMessage, LoadingMessage, Para, StyledApp } from './App.styles';
 import { Props, Store } from './App.interface';
 import { ROUTE_PAGE2, ROUTE_HOME } from '../../constants/routes';
+import packageJson from '../../../../package.json';
 
 export const Home: React.FC<{}> = () => (
-  <Para data-testid="app-home">
-    <strong>
-      <Link data-testid="app-home-link" to={ROUTE_PAGE2}>
-        Go to page 2
-      </Link>
-    </strong>
-  </Para>
+  <React.Fragment>
+    <Helmet>
+      <title>App</title>
+    </Helmet>
+    <Para data-testid="app-home">
+      <strong>
+        <Link data-testid="app-home-link" to={ROUTE_PAGE2}>
+          Go to page 2
+        </Link>
+      </strong>
+    </Para>
+  </React.Fragment>
 );
 
 export const NotFound: React.FC<{}> = () => (
   <React.Fragment>
+    <Helmet>
+      <title>NotFound - App</title>
+    </Helmet>
     <ErrorMessage data-testid="app-404-errmsg">
       <strong>404</strong>
     </ErrorMessage>
@@ -35,13 +45,18 @@ export const NotFound: React.FC<{}> = () => (
 );
 
 export const Page2: React.FC<{}> = () => (
-  <Para data-testid="app-page2">
-    <strong>
-      <Link data-testid="app-page2-link" to={ROUTE_HOME}>
-        Back to home
-      </Link>
-    </strong>
-  </Para>
+  <React.Fragment>
+    <Helmet>
+      <title>Page 2 - App</title>
+    </Helmet>
+    <Para data-testid="app-page2">
+      <strong>
+        <Link data-testid="app-page2-link" to={ROUTE_HOME}>
+          Back to home
+        </Link>
+      </strong>
+    </Para>
+  </React.Fragment>
 );
 
 const App: React.FC<Props> = ({ title }) => {
@@ -54,14 +69,15 @@ const App: React.FC<Props> = ({ title }) => {
     return (): void => clearTimeout(timer);
   }, []);
 
-  console.log('### app');
-
   return (
     <StyledApp>
+      <Helmet>
+        <title>App</title>
+      </Helmet>
       <h1 data-testid="app-title">{title}</h1>
       <Para data-testid="app-description">
-        Boilerplate for a webpack / koa based universal react app using babel, react-router, redux,
-        and typescript
+        v{packageJson.version} - Boilerplate for a webpack / koa based universal react app using
+        babel, react-router, redux, and typescript
       </Para>
 
       {loaded === true ? (
