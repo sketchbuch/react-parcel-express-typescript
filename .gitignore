@@ -1,0 +1,25 @@
+# Folders
+/audit
+/build
+/coverage
+/node_modules
+/public
+
+# Misc
+.DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.env
+.vscode
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Files
+*.code-workspace
+stats.*.json
+audit-report.html

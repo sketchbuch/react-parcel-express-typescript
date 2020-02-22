@@ -1,0 +1,41 @@
+{
+  "name": "parcel-express-react-typescript-babel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "SketchBuch <sb.design.de@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --config=./config/jest/jest.js"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.0",
+    "react-router-redux": "^4.0.8",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^12.12.11",
+    "@types/parcel-bundler": "^1.12.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-helmet": "^5.0.15",
+    "@types/react-redux": "^7.1.7",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/react-router-redux": "^5.0.18",
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/styled-components": "^5.0.0",
+    "jest": "25.0.0",
+    "jest-localstorage-mock": "^2.4.0",
+    "jest-styled-components": "7.0.0",
+    "parcel-bundler": "^1.12.4",
+    "react-test-renderer": "^16.12.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.7.5"
+  }
+}

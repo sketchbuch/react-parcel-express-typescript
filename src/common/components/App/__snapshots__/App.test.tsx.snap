@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> Styled Components: <ErrorMessage /> 1`] = `
+.c0 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-top: 20px;
+  color: red;
+}
+
+<div
+  className="sc-AxirZ c0"
+/>
+`;
+
+exports[`<App /> Styled Components: <LoadingMessage /> 1`] = `
+.c0 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-top: 20px;
+  color: #999;
+}
+
+<div
+  className="sc-AxirZ c0"
+/>
+`;
+
+exports[`<App /> Styled Components: <Para /> 1`] = `
+.c0 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-top: 20px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`<App /> Styled Components: <StyledApp /> 1`] = `
+.c0 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+<div
+  className="c0"
+/>
+`;
