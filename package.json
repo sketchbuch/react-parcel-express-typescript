@@ -1,9 +1,22 @@
 {
-  "name": "parcel-express-react-typescript-babel",
+  "name": "react-parcel-express-typescript",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "SketchBuch <sb.design.de@gmail.com>",
+  "description": "Boilerplate for a universal react app using babel, express, parcel, and typescript.",
+  "homepage": "https://github.com/sketchbuch/react-parcel-express-typescript",
   "license": "MIT",
+  "main": "./src/client/client.html",
+  "private": true,
+  "author": {
+    "name": "sketchbuch",
+    "url": "https://github.com/sketchbuch"
+  },
+  "bugs": {
+    "url": "https://github.com/sketchbuch/react-parcel-express-typescript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sketchbuch/react-parcel-express-typescript.git"
+  },
   "scripts": {
     "build:client": "parcel build src/client/client.html",
     "dev:client": "parcel src/client/client.html",
