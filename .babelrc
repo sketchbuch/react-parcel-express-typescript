@@ -1,3 +1,12 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]
+  "env": {
+    "server": {
+      "plugins": ["react-imported-component/babel", "babel-plugin-dynamic-import-node"],
+      "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]
+    },
+    "client": {
+      "plugins": ["react-imported-component/babel"],
+      "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]
+    }
+  }
 }
