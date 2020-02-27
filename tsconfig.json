@@ -21,6 +21,6 @@
     "strictNullChecks": true,
     "target": "ES5"
   },
-  "exclude": ["build", "node_modules", "public/dist"],
+  "exclude": ["build", "node_modules", "dist"],
   "include": ["config/jest/setup-jest.ts", "src/**/*", "config/**/*"]
 }

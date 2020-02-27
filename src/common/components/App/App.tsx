@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+// import { hot } from 'react-hot-loader';
 import { Link, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet';
@@ -74,7 +75,7 @@ const App: React.FC<Props> = ({ title }) => {
       <Helmet>
         <title>App</title>
       </Helmet>
-      <h1 data-testid="app-title">{title}</h1>
+      <h1 data-testid="app-title">{title} 2222</h1>
       <Para data-testid="app-description">
         v{packageJson.version} - Boilerplate for a webpack / koa based universal react app using
         babel, react-router, redux, and typescript

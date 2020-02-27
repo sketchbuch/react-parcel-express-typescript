@@ -1,11 +1,11 @@
-import express from 'express';
-import config from '../../config/convict';
+const express = require('express');
+//const config = require('../../config/convict');
 
-const SERVER_PORT = config.get('server.port');
-const SERVER_URL = config.get('server.url');
+const SERVER_PORT = 3001;
+const SERVER_URL = 'http://localhost';
 const app = express();
 
-app.use(express.static('dist/client', { index: 'client.html' }));
+app.use(express.static('dist', {index: 'client.html'}));
 
 app.listen(3001, () => {
   console.log('######################################');
