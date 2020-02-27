@@ -16,7 +16,7 @@ const defaultTemplate = `
       <script id="root-state">
         window.__PRELOADED_STATE__ = {contentState}
       </script>
-      <script type="text/javascript" src="/dist/js/app.js"></script>
+      <script type="text/javascript" src="/dist/client/client.js"></script>
     </body>
   </html>
 `;
