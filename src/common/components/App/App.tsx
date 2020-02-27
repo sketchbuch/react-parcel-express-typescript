@@ -75,7 +75,7 @@ const App: React.FC<Props> = ({ title }) => {
       <Helmet>
         <title>App</title>
       </Helmet>
-      <h1 data-testid="app-title">{title} 444</h1>
+      <h1 data-testid="app-title">{title}</h1>
       <Para data-testid="app-description">
         v{packageJson.version} - Boilerplate for a webpack / koa based universal react app using
         babel, react-router, redux, and typescript
