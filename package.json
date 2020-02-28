@@ -24,7 +24,7 @@
     "clean": "rimraf ./dist/*",
     "dev:parcel": "yarn clean && parcel ./src/client/client.html --port 3000 --open",
     "dev:server": "nodemon ./dist/server/server.js",
-    "dev": "yarn clean && yarn watch & (sleep 5 && yarn dev:server)",
+    "dev": "yarn clean && yarn watch & (sleep 10 && yarn dev:server)",
     "prod:server": "node ./dist/server/server.js",
     "prod": "yarn clean && yarn build && yarn prod:server",
     "test:c": "jest --config=./config/jest/jest.js --coverage",

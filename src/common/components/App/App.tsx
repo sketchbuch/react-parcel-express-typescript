@@ -70,6 +70,8 @@ const App: React.FC<Props> = ({ title }) => {
     return (): void => clearTimeout(timer);
   }, []);
 
+  console.log();
+
   return (
     <StyledApp>
       <Helmet>

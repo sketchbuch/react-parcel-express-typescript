@@ -1,5 +1,5 @@
 {
-  "ext": "js,json",
+  "ext": "js,json,ts,tsx",
   "ignore": [
     ".cache/**/*",
     "coverage/**/*",
