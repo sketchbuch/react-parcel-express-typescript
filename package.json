@@ -25,7 +25,7 @@
     "clean": "rimraf ./dist/*",
     "dev:parcel": "yarn clean && parcel ./src/client/client.html --port 3000 --open",
     "dev:server": "nodemon ./dist/server/server.js",
-    "dev": "yarn clean && yarn watch & (sleep 10 && yarn dev:server)",
+    "dev": "yarn clean && yarn watch & (sleep 8 && yarn dev:server)",
     "lint:js": "eslint --config ./.eslintrc.js --fix  --max-warnings=0 './{src,config}/**/*.{js,ts,tsx}'",
     "lint:js:dry": "eslint --config ./.eslintrc.js --fix-dry-run  --max-warnings=0 './{src,config}/**/*.{js,ts,tsx}'",
     "lint:prettier": "prettier --write --config ./.prettierrc.js './{src,config}/**/*.{js,ts,tsx}'",
