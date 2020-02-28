@@ -1,4 +1,4 @@
-import { APP_LOADED } from '../constants/actions';
+import { APP_LOADED } from '../constants';
 import { ReduxActionCreator } from '../types';
 
 export const loaded = (): ReduxActionCreator => {

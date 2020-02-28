@@ -1,13 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import 'jest-styled-components';
 import { wait } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { ErrorMessage, LoadingMessage, Para, StyledApp } from './App.styles';
 import { Props } from './App.interface';
-import { ROUTE_HOME, ROUTE_PAGE2 } from '../../constants/routes';
+import { renderWithRedux, renderWithRouter } from '../../tests';
+import { ROUTE_HOME, ROUTE_PAGE2 } from '../../constants';
 import App, { Home, NotFound, Page2 } from './App';
-import renderWithRedux from '../../tests/renderWithRedux';
-import renderWithRouter from '../../tests/renderWithRouter';
 
 describe('<App />', () => {
   const props: Props = {
@@ -24,7 +23,7 @@ describe('<App />', () => {
 
   test('Renders loading message', () => {
     const { getByTestId, getByText, queryByTestId, queryByText } = renderWithRedux(
-      <App {...props} />,
+      <App {...props} />
     );
 
     expect(getByTestId('app-loading')).toBeInTheDocument();
@@ -35,7 +34,7 @@ describe('<App />', () => {
 
   test('Renders loaded message after 1 second', async () => {
     const { getByTestId, getByText, queryByTestId, queryByText } = renderWithRedux(
-      <App {...props} />,
+      <App {...props} />
     );
     await wait(
       () => {
@@ -46,7 +45,7 @@ describe('<App />', () => {
       },
       {
         timeout: 1000,
-      },
+      }
     );
   });
 

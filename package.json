@@ -18,6 +18,7 @@
     "url": "https://github.com/sketchbuch/react-parcel-express-typescript.git"
   },
   "scripts": {
+    "audit:html": "yarn audit --json | yarn-audit-html --output audit-report.html",
     "build:client": "parcel build ./src/client/client.html --out-dir dist/client",
     "build:server": "parcel build ./src/server/server.ts -d dist/server --public-url /dist --target=node6",
     "build": "yarn build:client && yarn build:server",
@@ -25,9 +26,12 @@
     "dev:parcel": "yarn clean && parcel ./src/client/client.html --port 3000 --open",
     "dev:server": "nodemon ./dist/server/server.js",
     "dev": "yarn clean && yarn watch & (sleep 10 && yarn dev:server)",
+    "lint:js": "eslint --config ./.eslintrc.js --fix  --max-warnings=0 './{src,config}/**/*.{js,ts,tsx}'",
+    "lint:js:dry": "eslint --config ./.eslintrc.js --fix-dry-run  --max-warnings=0 './{src,config}/**/*.{js,ts,tsx}'",
+    "lint:prettier": "prettier --write --config ./.prettierrc.js './{src,config}/**/*.{js,ts,tsx}'",
+    "lint:ts": "tsc --jsx preserve --project ./",
     "prod:server": "node ./dist/server/server.js",
     "prod": "yarn clean && yarn build && yarn prod:server",
-    "test:c": "jest --config=./config/jest/jest.js --coverage",
     "test": "jest --config=./config/jest/jest.js",
     "watch:client": "parcel watch ./src/client/client.html --out-dir dist/client",
     "watch:server": "parcel watch ./src/server/server.ts -d dist/server --public-url /dist --target=node6",
@@ -56,6 +60,8 @@
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.4.0",
     "@types/compression": "^1.7.0",
@@ -76,18 +82,45 @@
     "@types/react-router-redux": "^5.0.18",
     "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.0.0",
+    "@types/supertest": "^2.0.8",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
     "jest": "25.0.0",
     "jest-localstorage-mock": "^2.4.0",
     "jest-styled-components": "7.0.0",
+    "lint-staged": "^10.0.8",
     "nodemon": "^2.0.2",
     "parcel-bundler": "1.11.0",
     "parcel-plugin-bundle-visualiser": "^1.2.0",
+    "prettier": "^1.19.1",
     "react-hot-loader": "^4.12.19",
     "react-test-renderer": "^16.12.0",
+    "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "yarn-audit-html": "^1.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,ts,tsx}": [
+      "yarn lint:js",
+      "yarn prettier",
+      "git add"
+    ]
   }
 }

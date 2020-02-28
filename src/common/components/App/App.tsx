@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-// import { hot } from 'react-hot-loader';
 import { Link, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { APP_LOADED } from '../../constants/actions';
+import { APP_LOADED, ROUTE_HOME, ROUTE_PAGE2 } from '../../constants';
 import { ErrorMessage, LoadingMessage, Para, StyledApp } from './App.styles';
 import { Props, Store } from './App.interface';
-import { ROUTE_PAGE2, ROUTE_HOME } from '../../constants/routes';
 import packageJson from '../../../../package.json';
 
 export const Home: React.FC<{}> = () => (
@@ -69,8 +67,6 @@ const App: React.FC<Props> = ({ title }) => {
 
     return (): void => clearTimeout(timer);
   }, []);
-
-  console.log();
 
   return (
     <StyledApp>

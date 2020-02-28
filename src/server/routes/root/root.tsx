@@ -1,24 +1,16 @@
-import React from 'react';
-import express from 'express';
-import * as fs from 'fs';
-import * as path from 'path';
-import { ServerStyleSheet } from 'styled-components';
+import * as React from 'react';
 import { renderToString } from 'react-dom/server';
-import Root, { store } from '../../../common/components/Root/Root';
-import getTemplateState from '../../utils/getTemplateState';
+import { ServerStyleSheet } from 'styled-components';
+import express from 'express';
 import { getTemplate } from '../../utils';
+import { ROUTE_ALL as rootPath } from '../../../common/constants';
+import getTemplateState from '../../utils/getTemplateState';
+import Root, { store } from '../../../common/components/Root/Root';
 
-let bundleName = '';
-
-export const defaultRoute = (req: express.Request, res: express.Response): void => {
-  if (!bundleName) {
-    fs.readdirSync(path.resolve(__dirname, '../../dist/client')).forEach(file => {
-      if (!bundleName && file.includes('.js')) {
-        bundleName = file;
-      }
-    });
-  }
-
+export const rootRoute = (bundleName: string) => (
+  req: express.Request,
+  res: express.Response
+): void => {
   const sheet: ServerStyleSheet = new ServerStyleSheet();
   const content: string = renderToString(
     sheet.collectStyles(<Root isSsr location={req.originalUrl} />)
@@ -28,3 +20,5 @@ export const defaultRoute = (req: express.Request, res: express.Response): void 
 
   res.send(getTemplate({ bundleName, content, contentState, styles }));
 };
+
+export { rootPath };

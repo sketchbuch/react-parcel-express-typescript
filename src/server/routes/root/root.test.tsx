@@ -1,13 +1,6 @@
-import React from 'react';
-import request from 'supertest';
-import { renderToString } from 'react-dom/server';
-import Root, { store } from '../../../common/components/Root/Root';
-import getTemplateState from '../../utils/getTemplateState';
 import server from '../../server';
-import { ROUTE_ALL, ROUTE_TYPE_HTML } from '../../../common/constants/routes';
-import { ServerContext } from '../../../common/types';
-import { getTemplate } from '../../utils';
-import { routeCallback, routePath } from './root';
+import { ROUTE_ALL } from '../../../common/constants';
+import { rootPath } from './root';
 
 describe('Route: root', () => {
   const originalConsoleError = console.error;
@@ -31,28 +24,6 @@ describe('Route: root', () => {
   });
 
   test('Uses correct route', async () => {
-    expect(routePath).toBe(ROUTE_ALL);
-  });
-
-  test.skip('Renders correct content', async () => {
-    const ctx = {} as ServerContext;
-    await routeCallback(ctx);
-
-    const content: string = renderToString(<Root isSsr location="/" />);
-    expect(ctx.body).toBe(
-      getTemplate({
-        content,
-        contentState: getTemplateState(store.getState()),
-        styles: '',
-      }),
-    );
-  });
-
-  test.skip('Responds as expected', async () => {
-    const { status, type, text } = await request(server).get('/');
-
-    expect(status).toEqual(200);
-    expect(type).toEqual(ROUTE_TYPE_HTML);
-    expect(text).toEqual(expect.any(String));
+    expect(rootPath).toBe(ROUTE_ALL);
   });
 });

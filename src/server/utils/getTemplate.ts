@@ -6,7 +6,7 @@ const getTemplate = (placeholders: Placeholders): string => {
     (replacedTemplate: string, placeholder: string) => {
       return replacedTemplate.replace(`{${placeholder}}`, placeholders[placeholder].trim());
     },
-    defaultTemplate,
+    defaultTemplate
   );
 
   return replacedTemplate.trim();

@@ -1,5 +1,5 @@
 import serverInfo from '../serverInfo';
-import { SERVER_INFO_SEP } from '../../../common/constants/server';
+import { SERVER_INFO_SEP } from '../../../common/constants';
 
 describe('serverInfo()', () => {
   const PORT = 3000;

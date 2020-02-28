@@ -1,4 +1,4 @@
-import { APP_LOADED } from '../constants/actions';
+import { APP_LOADED } from '../constants';
 import { ReduxAction } from '../types';
 
 export type State = boolean;

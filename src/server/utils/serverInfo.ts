@@ -1,4 +1,4 @@
-import { SERVER_INFO_SEP } from '../../common/constants/server';
+import { SERVER_INFO_SEP } from '../../common/constants';
 import { getMaxLength } from '.';
 
 const serverInfo = (messages: string[]): void => {

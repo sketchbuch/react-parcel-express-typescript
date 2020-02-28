@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter, StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { Props, RouterProps } from './Root.interface';
 import App from '../App/App';
 import store from '../../store/redux';
-import { Props, RouterProps } from './Root.interface';
 
 const Root: React.FC<Props> = ({ isSsr = false, location = '' }) => {
   const Router: React.ReactType = isSsr ? StaticRouter : BrowserRouter;

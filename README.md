@@ -8,19 +8,22 @@ This is a **WIP** mainly for myself to try and learn more about building my own 
 
 ## Scripts
 
-| Command      | description                                                        |
-| ------------ | ------------------------------------------------------------------ |
-| build:client | Parcel will build the client code once for production              |
-| build:server | Parcel will build the server code once for production              |
-| build        | Runs build:client and build:sever                                  |
-| clean        | Removes all files from dist/                                       |
-| dev:parcel   | Start Parcel's internal server with HMR (client-side only)         |
-| dev:server   | Start server using nodemon to watch for changes                    |
-| dev          | Watch and start express for development with HMR (client & server) |
-| prod         | Build and start express for production                             |
-| prod:server  | Start server using node for production                             |
-| test:c       | Generate a test coverage report using jest                         |
-| test         | Run tests using jest                                               |
-| watch:client | Parcel will watch the client code for development                  |
-| watch:server | Parcel will watch the server code for development                  |
-| watch        | Runs watch:client and watch:sever                                  |
+| Command       | Description                                                        |
+| ------------- | ------------------------------------------------------------------ |
+| audit:html    | Run Yarn HTML Audit                                                |
+| build:server  | Parcel will build the server code once for production              |
+| build         | Runs build:client and build:sever                                  |
+| clean         | Removes all files from dist/                                       |
+| dev:parcel    | Start Parcel's internal server with HMR (client-side only)         |
+| dev:server    | Start server using nodemon to watch for changes                    |
+| dev           | Watch and start express for development with HMR (client & server) |
+| lint:js       | Lint JS/TS with ESLint and fix errors production                   |
+| lint:js:dry   | Lint JS/TS with ESLint as a dry-run without fixing errors          |
+| lint:prettier | Lint JS/TS with Prettier                                           |
+| lint:ts       | Lint TS files                                                      |
+| prod          | Build and start express for production                             |
+| prod:server   | Start server using node for production                             |
+| test          | Run tests using jest                                               |
+| watch:client  | Parcel will watch the client code for development                  |
+| watch:server  | Parcel will watch the server code for development                  |
+| watch         | Runs watch:client and watch:sever                                  |
