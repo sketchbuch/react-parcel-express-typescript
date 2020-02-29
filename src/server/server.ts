@@ -26,6 +26,11 @@ if (!bundleName) {
 app.use(helmet());
 app.use(compress());
 app.use(
+  express.static('./public', {
+    maxAge: ONE_HOUR,
+  })
+);
+app.use(
   express.static('./dist', {
     maxAge: ONE_HOUR,
   })
