@@ -3,7 +3,8 @@
   "ignore": [
     ".cache/**/*",
     "coverage/**/*",
-    "dist/**/*",
+    "dist/client/**/*.map",
+    "dist/server/**/*",
     "node-modules/**/*",
     "src/client/**/*",
     "src/common/**/*"
