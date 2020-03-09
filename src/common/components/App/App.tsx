@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { APP_LOADED, ROUTE_HOME, ROUTE_PAGE2 } from '../../constants';
+import { APP_LOADED, APP_TITLE, ROUTE_HOME, ROUTE_PAGE2 } from '../../constants';
 import { ErrorMessage, LoadingMessage, Para, StyledApp } from './App.styles';
 import { Props, Store } from './App.interface';
 import packageJson from '../../../../package.json';
@@ -10,7 +10,7 @@ import packageJson from '../../../../package.json';
 export const Home: React.FC<{}> = () => (
   <React.Fragment>
     <Helmet>
-      <title>App</title>
+      <title>{APP_TITLE}</title>
     </Helmet>
     <Para data-testid="app-home">
       <strong>
@@ -25,7 +25,7 @@ export const Home: React.FC<{}> = () => (
 export const NotFound: React.FC<{}> = () => (
   <React.Fragment>
     <Helmet>
-      <title>NotFound - App</title>
+      <title>NotFound - {APP_TITLE}</title>
     </Helmet>
     <ErrorMessage data-testid="app-404-errmsg">
       <strong>404</strong>
@@ -46,7 +46,7 @@ export const NotFound: React.FC<{}> = () => (
 export const Page2: React.FC<{}> = () => (
   <React.Fragment>
     <Helmet>
-      <title>Page 2 - App</title>
+      <title>Page 2 - {APP_TITLE}</title>
     </Helmet>
     <Para data-testid="app-page2">
       <strong>
@@ -71,7 +71,7 @@ const App: React.FC<Props> = ({ title }) => {
   return (
     <StyledApp>
       <Helmet>
-        <title>App</title>
+        <title>{APP_TITLE}</title>
       </Helmet>
       <h1 data-testid="app-title">{title}</h1>
       <Para data-testid="app-description">
