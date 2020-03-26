@@ -1,0 +1,6 @@
+{
+  "app": {
+    "title": "The title",
+    "title-ssr": "The title (SERVER)"
+  }
+}

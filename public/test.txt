@@ -1,1 +1,0 @@
-You can add any public files to this folder that you want to serve.

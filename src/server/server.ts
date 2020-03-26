@@ -3,6 +3,7 @@ import * as path from 'path';
 import compress from 'compression';
 import express from 'express';
 import helmet from 'helmet';
+import './translations';
 import { rootRoute } from './routes';
 import { ROUTE_ALL as rootPath } from '../common/constants';
 import config from '../../config/convict';

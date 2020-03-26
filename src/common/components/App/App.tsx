@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { APP_LOADED, APP_TITLE, ROUTE_HOME, ROUTE_PAGE2 } from '../../constants';
 import { ErrorMessage, LoadingMessage, Para, StyledApp } from './App.styles';
 import { Props, Store } from './App.interface';
@@ -58,9 +59,10 @@ export const Page2: React.FC<{}> = () => (
   </React.Fragment>
 );
 
-const App: React.FC<Props> = ({ title }) => {
+const App: React.FC<Props> = ({ isSsr }) => {
   const loaded: boolean = useSelector<Store, boolean>(state => state.app);
   const dispatch = useDispatch();
+  const { ready, t } = useTranslation();
 
   useEffect(() => {
     const timer: number = window.setTimeout(() => dispatch({ type: APP_LOADED }), 1000);
@@ -68,12 +70,16 @@ const App: React.FC<Props> = ({ title }) => {
     return (): void => clearTimeout(timer);
   }, []);
 
+  if (!ready) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <StyledApp>
       <Helmet>
         <title>{APP_TITLE}</title>
       </Helmet>
-      <h1 data-testid="app-title">{title}</h1>
+      <h1 data-testid="app-title">{t(isSsr ? 'app.title-ssr' : 'app.title')}</h1>
       <Para data-testid="app-description">
         v{packageJson.version} - Boilerplate for a webpack / koa based universal react app using
         babel, react-router, redux, and typescript

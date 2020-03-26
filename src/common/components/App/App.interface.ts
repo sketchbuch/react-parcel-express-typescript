@@ -1,5 +1,5 @@
 export interface Props {
-  title: string;
+  isSsr: boolean;
 }
 
 export interface Store {

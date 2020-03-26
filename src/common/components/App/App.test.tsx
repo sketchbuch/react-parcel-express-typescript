@@ -10,16 +10,16 @@ import App, { Home, NotFound, Page2 } from './App';
 
 describe('<App />', () => {
   const props: Props = {
-    title: 'A headline',
+    isSsr: false,
   };
   const LOADING_TXT = 'Loading...';
   const LOADED_TXT = 'Loaded!';
 
-  test('Renders the title', () => {
+  /* test('Renders the title', () => {
     const { getByTestId, getByText } = renderWithRedux(<App {...props} />);
     expect(getByTestId('app-title')).toBeInTheDocument();
     expect(getByText(props.title)).toBeInTheDocument();
-  });
+  }); */
 
   test('Renders loading message', () => {
     const { getByTestId, getByText, queryByTestId, queryByText } = renderWithRedux(
