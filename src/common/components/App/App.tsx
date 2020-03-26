@@ -62,17 +62,13 @@ export const Page2: React.FC<{}> = () => (
 const App: React.FC<Props> = ({ isSsr }) => {
   const loaded: boolean = useSelector<Store, boolean>(state => state.app);
   const dispatch = useDispatch();
-  const { ready, t } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timer: number = window.setTimeout(() => dispatch({ type: APP_LOADED }), 1000);
 
     return (): void => clearTimeout(timer);
   }, []);
-
-  if (!ready) {
-    return <p>Loading...</p>;
-  }
 
   return (
     <StyledApp>

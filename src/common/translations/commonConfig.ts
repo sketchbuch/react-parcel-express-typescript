@@ -1,9 +1,9 @@
-import { InitOptions } from 'i18next'
-import { availableLanguages, defaultLangKey } from '../constants'
-import { detection } from './detectorOptions'
+import { InitOptions } from 'i18next';
+import { availableLanguages, defaultLangKey } from '../constants';
+import { detection } from './detectorOptions';
 
 export const commonConfig: InitOptions = {
-  debug: true,
+  debug: false,
   detection,
   fallbackLng: [defaultLangKey],
   initImmediate: false,
@@ -15,4 +15,4 @@ export const commonConfig: InitOptions = {
     wait: true,
   },
   whitelist: [...availableLanguages],
-}
+};
