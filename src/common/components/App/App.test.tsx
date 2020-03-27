@@ -2,7 +2,7 @@ import * as React from 'react';
 import 'jest-styled-components';
 import { wait } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import { ErrorMessage, LoadingMessage, Para, StyledApp } from './App.styles';
+import { StyledErrorMessage, StyledLoadingMessage, StyledPara, StyledApp } from './App.styles';
 import { Props } from './App.interface';
 import { renderWithRedux, renderWithRouter } from '../../tests';
 import { ROUTE_HOME, ROUTE_PAGE2 } from '../../constants';
@@ -12,14 +12,20 @@ describe('<App />', () => {
   const props: Props = {
     isSsr: false,
   };
-  const LOADING_TXT = 'Loading...';
-  const LOADED_TXT = 'Loaded!';
+  const LOADING_TXT = 'app.loading';
+  const LOADED_TXT = 'app.loaded';
 
-  /* test('Renders the title', () => {
+  test('Renders the title', () => {
     const { getByTestId, getByText } = renderWithRedux(<App {...props} />);
     expect(getByTestId('app-title')).toBeInTheDocument();
-    expect(getByText(props.title)).toBeInTheDocument();
-  }); */
+    expect(getByText('app.title')).toBeInTheDocument();
+  });
+
+  test('Renders the title for SSR', () => {
+    const { getByTestId, getByText } = renderWithRedux(<App {...props} isSsr />);
+    expect(getByTestId('app-title')).toBeInTheDocument();
+    expect(getByText('app.title-ssr')).toBeInTheDocument();
+  });
 
   test('Renders loading message', () => {
     const { getByTestId, getByText, queryByTestId, queryByText } = renderWithRedux(
@@ -51,17 +57,17 @@ describe('<App />', () => {
 
   describe('Styled Components:', () => {
     test('<ErrorMessage />', () => {
-      const tree = renderer.create(<ErrorMessage />).toJSON();
+      const tree = renderer.create(<StyledErrorMessage />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     test('<LoadingMessage />', () => {
-      const tree = renderer.create(<LoadingMessage />).toJSON();
+      const tree = renderer.create(<StyledLoadingMessage />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     test('<Para />', () => {
-      const tree = renderer.create(<Para />).toJSON();
+      const tree = renderer.create(<StyledPara />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
