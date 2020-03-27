@@ -1,0 +1,24 @@
+{
+  "app": {
+    "description": "v{{VERSION}} - {{DESCRIPTION}}",
+    "home": "Zurück zur Startseite",
+    "langTooltip": "Sprache ändern in '{{LANG}}'",
+    "loaded": "Geladen!",
+    "loading": "Lädt...",
+    "title-ssr": "Das Titel (SERVER)",
+    "title": "Das Titel"
+  },
+  "home": {
+    "message": "Startseite",
+    "page2": "Zu Seite 2",
+    "title": "{{APP_TITLE}}"
+  },
+  "notFound": {
+    "message": "Seite nicht gefunden",
+    "title": "Nicht gefunden - {{APP_TITLE}}"
+  },
+  "page2": {
+    "message": "Seite 2",
+    "title": "Seite 2 - {{APP_TITLE}}"
+  }
+}

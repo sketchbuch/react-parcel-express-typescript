@@ -1,0 +1,24 @@
+{
+  "app": {
+    "description": "v{{VERSION}} - {{DESCRIPTION}}",
+    "home": "Back to home",
+    "langTooltip": "Change language to '{{LANG}}'",
+    "loaded": "Loaded!",
+    "loading": "Loading...",
+    "title-ssr": "The title (SERVER)",
+    "title": "The title"
+  },
+  "home": {
+    "message": "Home",
+    "page2": "Go to page 2",
+    "title": "{{APP_TITLE}}"
+  },
+  "notFound": {
+    "message": "Sorry but the page you requested could not be found",
+    "title": "Not found - {{APP_TITLE}}"
+  },
+  "page2": {
+    "message": "Page 2",
+    "title": "Page 2 - {{APP_TITLE}}"
+  }
+}
