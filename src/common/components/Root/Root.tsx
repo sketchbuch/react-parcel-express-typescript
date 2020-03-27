@@ -8,12 +8,11 @@ import store from '../../store/redux';
 const Root: React.FC<Props> = ({ isSsr = false, location = '' }) => {
   const Router: React.ReactType = isSsr ? StaticRouter : BrowserRouter;
   const routerProps: RouterProps = isSsr ? { location } : {};
-  const appTitle: string = isSsr ? 'App (Server)' : 'App';
 
   return (
     <Provider store={store}>
       <Router {...routerProps}>
-        <App title={appTitle} />
+        <App isSsr={isSsr} />
       </Router>
     </Provider>
   );

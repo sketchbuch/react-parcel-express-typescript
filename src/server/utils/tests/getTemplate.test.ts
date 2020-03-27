@@ -15,12 +15,16 @@ describe('getTemplate()', () => {
       content,
       contentState,
       styles,
+      transLang: `'EN'`,
+      transStore: JSON.stringify({}),
     });
     const expected: string = defaultTemplate
-      .replace('{content}', content)
       .replace('{bundleName}', BUNDLE_NAME)
+      .replace('{content}', content)
       .replace('{contentState}', contentState)
       .replace('{styles}', '')
+      .replace('{transLang}', `'EN'`)
+      .replace('{transStore}', '{}')
       .trim();
 
     expect(result).toEqual(expected);

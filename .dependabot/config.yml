@@ -11,3 +11,13 @@ update_configs:
     directory: '/'
     target_branch: 'develop'
     update_schedule: 'live'
+    automerged_updates:
+      - match:
+          dependency_type: 'all'
+          update_type: 'semver:minor'
+      - match:
+          dependency_type: 'all'
+          update_type: 'semver:patch'
+      - match:
+          dependency_type: 'all'
+          update_type: 'security:patch'
