@@ -104,7 +104,7 @@
     "parcel-plugin-bundle-visualiser": "^1.2.0",
     "prettier": "^2.0.2",
     "react-hot-loader": "^4.12.20",
-    "react-test-renderer": "^16.13.0",
+    "react-test-renderer": "^16.13.1",
     "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3",
