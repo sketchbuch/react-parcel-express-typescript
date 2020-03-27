@@ -1,10 +1,9 @@
-import * as React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
+import * as React from 'react';
 import express from 'express';
-import { collectTranslations, getTemplate  } from '../../utils';
-import { commonConfig, i18n } from '../../../common/translations';
+import { collectTranslations, getTemplate } from '../../utils';
 import { ROUTE_ALL as rootPath } from '../../../common/constants';
 import getTemplateState from '../../utils/getTemplateState';
 import Root, { store } from '../../../common/components/Root/Root';
@@ -15,17 +14,10 @@ export const rootRoute = (bundleName: string) => (
   req: express.Request,
   res: express.Response
 ): void => {
-  if (!i18n.isInitialized) {
-    i18n.init({
-      ...commonConfig,
-      resources,
-    });
-  }
-
   const sheet: ServerStyleSheet = new ServerStyleSheet();
   const content: string = renderToString(
     sheet.collectStyles(
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={req.i18n}>
         <Root isSsr location={req.originalUrl} />
       </I18nextProvider>
     )
@@ -33,7 +25,16 @@ export const rootRoute = (bundleName: string) => (
   const styles: string = sheet.getStyleTags();
   const contentState: string = getTemplateState(store.getState());
 
-  res.send(getTemplate({ bundleName, content, contentState, styles }));
+  res.send(
+    getTemplate({
+      bundleName,
+      content,
+      contentState,
+      styles,
+      transLang: `'${req.language}'`,
+      transStore: JSON.stringify(resources),
+    })
+  );
 };
 
 export { rootPath };

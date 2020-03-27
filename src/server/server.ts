@@ -3,15 +3,26 @@ import * as path from 'path';
 import compress from 'compression';
 import express from 'express';
 import helmet from 'helmet';
+import i18next from 'i18next';
+import middleware from 'i18next-express-middleware';
+import { collectTranslations, serverInfo } from './utils';
+import { commonConfig } from '../common/translations';
 import { rootRoute } from './routes';
-import { ROUTE_ALL as rootPath } from '../common/constants';
+import { ROUTE_ALL as rootPath, availableLanguages } from '../common/constants';
 import config from '../../config/convict';
-import serverInfo from './utils/serverInfo';
 
 const ONE_HOUR = 60 * 60;
 const SERVER_PORT: number = config.get('server.port');
 const SERVER_URL: string = config.get('server.url');
 const app = express();
+const preload = [...availableLanguages]
+const resources = collectTranslations(`${__dirname}/../../public/locales`);
+
+i18next.use(middleware.LanguageDetector).init({
+  ...commonConfig,
+  preload,
+  resources,
+});
 
 let bundleName = '';
 
@@ -25,6 +36,14 @@ if (!bundleName) {
 
 app.use(helmet());
 app.use(compress());
+
+app.use(
+  middleware.handle(i18next, {
+    // ignoreRoutes: ["/foo"],
+    removeLngFromUrl: false
+  })
+);
+
 app.use(
   express.static('./public', {
     maxAge: ONE_HOUR,

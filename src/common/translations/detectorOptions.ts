@@ -1,11 +1,11 @@
 import { DetectorOptions } from "i18next-browser-languagedetector";
+import { lookupCookie,lookupLocalStorage, lookupQuerystring } from '../constants';
 
 export const detection: DetectorOptions = {
-  caches: ['localStorage', 'cookie'],
+  caches: ['cookie'],
   cookieDomain: 'localhost',
   excludeCacheFor: ['cimode'],
-  lookupCookie: 'i18next',
-  lookupLocalStorage: 'i18nextLng',
-  lookupQuerystring: 'lng',
-  order: ['navigator', 'htmlTag', 'path', 'subdomain'],
+  lookupCookie,
+  lookupLocalStorage,
+  lookupQuerystring,
 };

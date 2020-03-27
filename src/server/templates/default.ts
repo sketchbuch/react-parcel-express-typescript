@@ -16,6 +16,8 @@ const defaultTemplate = `
       <div id="root">{content}</div>
       <script id="root-state">
         window.__PRELOADED_STATE__ = {contentState}
+        window.__initialI18nStore__ = {transStore}
+        window.__initialLanguage__ = {transLang}
       </script>
       <script type="text/javascript" src="/client/{bundleName}"></script>
     </body>
