@@ -23,6 +23,7 @@ This is mainly for myself to try and learn more about building my own webstack f
 | lint:ts       | Lint TS files                                                      |
 | prod          | Build and start express for production                             |
 | prod:server   | Start server using node for production                             |
+| release       | Increases version and updates change log and creates a tag         |
 | test          | Run tests using jest                                               |
 | watch:client  | Parcel will watch the client code for development                  |
 | watch:server  | Parcel will watch the server code for development                  |
