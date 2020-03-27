@@ -1,7 +1,8 @@
 {
   "app": {
-    "description": "v{{VERSION}} - Boilerplate for a webpack / koa based universal react app using babel, react-router, redux, and typescriptThe title",
+    "description": "v{{VERSION}} - {{DESCRIPTION}}",
     "home": "Back to home",
+    "langTooltip": "Change language to '{{LANG}}'",
     "loaded": "Loaded!",
     "loading": "Loading...",
     "title-ssr": "The title (SERVER)",
