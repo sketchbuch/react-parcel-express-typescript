@@ -58,7 +58,7 @@ app.use(
 app.use(rootPath, rootRoute(bundleName));
 
 const server = app.listen(SERVER_PORT, () => {
-  serverInfo(['Server started:', ` - ${SERVER_URL}:${SERVER_PORT}`]);
+  serverInfo(['Server started:', ` - URL: ${SERVER_URL}:${SERVER_PORT}`, ` - Env: ${config.get('env')}`]);
 });
 
 export default server;
