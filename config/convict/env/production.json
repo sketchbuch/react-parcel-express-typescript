@@ -1,3 +1,7 @@
 {
-  "env": "production"
+  "env": "production",
+  "server": {
+    "port": 3001,
+    "url": "http://localhost"
+  }
 }
