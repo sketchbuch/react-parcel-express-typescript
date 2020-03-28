@@ -23,7 +23,7 @@
     "build:server": "parcel build ./src/server/server.ts -d dist/server --public-url /dist --target=node6",
     "build": "yarn build:client && yarn build:server",
     "clean": "rimraf ./dist/*",
-    "deloy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "dev:server": "nodemon ./dist/server/server.js",
     "dev": "yarn clean && yarn watch & (sleep 8 && yarn dev:server)",
     "lint:js": "eslint --config ./.eslintrc.js --fix  --max-warnings=0 './{src,config}/**/*.{js,ts,tsx}'",
