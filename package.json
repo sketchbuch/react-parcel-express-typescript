@@ -75,7 +75,7 @@
     "@types/compression": "^1.7.0",
     "@types/concurrently": "^5.1.0",
     "@types/convict": "^4.2.1",
-    "@types/express": "^4.17.3",
+    "@types/express": "^4.17.4",
     "@types/helmet": "^0.0.45",
     "@types/i18next-express-middleware": "^1.7.0",
     "@types/i18next-node-fs-backend": "^2.1.0",
