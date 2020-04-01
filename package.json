@@ -19,7 +19,7 @@
   },
   "scripts": {
     "audit:html": "yarn audit --json | yarn-audit-html --output audit-report.html",
-    "build:client": "parcel build ./src/client/client.html --out-dir dist/client",
+    "build:client": "parcel build ./src/client/index.html --out-dir dist/client",
     "build:server": "parcel build ./src/server/server.ts -d dist/server --public-url /dist --target=node6",
     "build": "yarn build:client && yarn build:server",
     "clean": "rimraf ./dist/*",
@@ -33,7 +33,7 @@
     "prod": "yarn clean && yarn build && cross-env NODE_ENV=production yarn prod:server",
     "release": "standard-version",
     "test": "jest --config=./config/jest/jest.js",
-    "watch:client": "parcel watch ./src/client/client.html --out-dir dist/client",
+    "watch:client": "parcel watch ./src/client/index.html --out-dir dist/client",
     "watch:server": "parcel watch ./src/server/server.ts -d dist/server --public-url /dist --target=node6",
     "watch": "concurrently --kill-others \"yarn watch:client\" \"yarn watch:server\""
   },
