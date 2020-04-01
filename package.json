@@ -112,7 +112,6 @@
     "lint-staged": "^10.1.1",
     "nodemon": "^2.0.2",
     "parcel-bundler": "1.12.4",
-    "parcel-plugin-bundle-visualiser": "^1.2.0",
     "prettier": "^2.0.2",
     "react-hot-loader": "^4.12.20",
     "react-test-renderer": "^16.13.1",
