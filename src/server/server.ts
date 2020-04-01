@@ -15,7 +15,7 @@ const ONE_HOUR = 60 * 60;
 const SERVER_PORT: number = config.get('server.port');
 const SERVER_URL: string = config.get('server.url');
 const app = express();
-const preload = [...availableLanguages]
+const preload = [...availableLanguages];
 const resources = collectTranslations(`${__dirname}/../../public/locales`);
 
 i18next.use(middleware.LanguageDetector).init({
@@ -27,7 +27,7 @@ i18next.use(middleware.LanguageDetector).init({
 let bundleName = '';
 
 if (!bundleName) {
-  fs.readdirSync(path.resolve(__dirname, '../client')).forEach(file => {
+  fs.readdirSync(path.resolve(__dirname, '../client')).forEach((file) => {
     if (!bundleName && file.includes('.js')) {
       bundleName = file;
     }
@@ -40,7 +40,7 @@ app.use(compress());
 app.use(
   middleware.handle(i18next, {
     // ignoreRoutes: ["/foo"],
-    removeLngFromUrl: false
+    removeLngFromUrl: false,
   })
 );
 
@@ -61,7 +61,7 @@ const server = app.listen(SERVER_PORT, () => {
   serverInfo([
     'Server started:',
     ` - URL: ${SERVER_URL}:${SERVER_PORT}`,
-    ` - Env: ${config.get('env')}`
+    ` - Env: ${config.get('env')}`,
   ]);
 });
 
