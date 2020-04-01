@@ -5,7 +5,6 @@ update_configs:
       include_scope: true
       prefix: 'chore'
     default_reviewers:
-      - sketchbuch
     default_labels:
       - 'dependencies'
     directory: '/'
