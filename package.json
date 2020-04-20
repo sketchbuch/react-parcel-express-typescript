@@ -93,7 +93,7 @@
     "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.0.1",
     "@types/supertest": "^2.0.8",
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "babel-preset-env": "^1.7.0",
