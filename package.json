@@ -24,7 +24,7 @@
     "build": "yarn build:client && yarn build:server",
     "clean": "rimraf ./dist/*",
     "dev:server": "nodemon ./dist/server/server.js",
-    "dev": "yarn clean && yarn watch & (sleep 8 && yarn dev:server)",
+    "dev": "yarn clean && yarn watch & yarn waiton:serverjs && yarn dev:server",
     "lint:js": "eslint --config ./.eslintrc.js --fix  --max-warnings=0 './{src,config}/**/*.{js,ts,tsx}'",
     "lint:js:dry": "eslint --config ./.eslintrc.js --fix-dry-run  --max-warnings=0 './{src,config}/**/*.{js,ts,tsx}'",
     "lint:prettier": "prettier --write --config ./.prettierrc.js './{src,config}/**/*.{js,ts,tsx}'",
@@ -33,6 +33,7 @@
     "prod": "yarn clean && yarn build && cross-env NODE_ENV=production yarn prod:server",
     "release": "standard-version",
     "test": "jest --config=./config/jest/jest.js",
+    "waiton:serverjs": "yarn wait-on ./dist/server/server.js",
     "watch:client": "parcel watch ./src/client/index.html --out-dir dist/client",
     "watch:server": "parcel watch ./src/server/server.ts -d dist/server --public-url /dist --target=node6",
     "watch": "concurrently --kill-others \"yarn watch:client\" \"yarn watch:server\""
@@ -59,7 +60,8 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.0",
     "react-router-redux": "^4.0.8",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "wait-on": "^5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
