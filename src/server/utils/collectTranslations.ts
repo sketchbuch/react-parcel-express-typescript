@@ -1,7 +1,7 @@
-import { Resource, ResourceKey, ResourceLanguage } from 'i18next';
-import * as fs from 'fs';
 import { availableLanguages } from '../../common/constants';
 import { Langs } from '../../common/types';
+import { Resource, ResourceKey, ResourceLanguage } from 'i18next';
+import * as fs from 'fs';
 
 export const collectTranslations = (pathToLocales: string): Resource => {
   return availableLanguages.reduce((accTranslations: Resource, curLang: Langs): Resource => {
