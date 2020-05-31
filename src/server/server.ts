@@ -62,6 +62,7 @@ const server = app.listen(SERVER_PORT, () => {
     'Server started:',
     ` - URL: ${SERVER_URL}:${SERVER_PORT}`,
     ` - Env: ${config.get('env')}`,
+    ` - Bundle: ${bundleName}`,
   ]);
 });
 
