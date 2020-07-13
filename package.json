@@ -117,7 +117,7 @@
     "prettier": "^2.0.2",
     "react-hot-loader": "^4.12.20",
     "react-test-renderer": "^16.13.1",
-    "standard-version": "^7.1.0",
+    "standard-version": "^8.0.1",
     "supertest": "^4.0.2",
     "ts-jest": "^25.3.0",
     "typescript": "^3.8.3",
